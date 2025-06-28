@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Profile | AptiNudge</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .profile-card {
+      background: rgba(255,255,255,0.97);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      padding: 40px 32px 32px 32px;
+      max-width: 350px;
+      width: 100%;
+      text-align: center;
+      margin-top: 60px;
+    }
+    .profile-avatar {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .profile-name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 8px;
+    }
+    .profile-email {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 24px;
+    }
+    .logout-btn {
+      padding: 12px 32px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .logout-btn:hover {
+      background: #667eea;
+    }
+    @media (max-width: 600px) {
+      .profile-card {
+        max-width: 98vw;
+        padding: 18px 6px 12px 6px;
+        margin-top: 20px;
+      }
+      .profile-name {
+        font-size: 1.1rem;
+      }
+      .profile-email {
+        font-size: 0.95rem;
+      }
+      .logout-btn {
+        font-size: 1rem;
+        padding: 12px 8px;
+        width: 100%;
+        min-width: 0;
+        margin: 6px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+    <div class="profile-avatar">👤</div>
+    <div class="profile-name" id="profileName">Name</div>
+    <div class="profile-email" id="profileEmail">email@example.com</div>
+    <button class="logout-btn" id="logoutBtn">Logout</button>
+  </div>
+  <script>
+    // Get user info from JWT token
+    function getUserFromToken() {
+      const token = localStorage.getItem('token');
+      if (!token) return null;
+      try {
+        const payload = JSON.parse(atob(token.split('.')[1]));
+        return payload;
+      } catch (e) {
+        return null;
+      }
+    }
+    const user = getUserFromToken();
+    if (user) {
+      document.getElementById('profileName').textContent = user.username || 'User';
+      document.getElementById('profileEmail').textContent = user.email || '';
+    } else {
+      // Not logged in, redirect to welcome
+      window.location = 'welcome.html';
+    }
+    document.getElementById('logoutBtn').onclick = function() {
+      localStorage.removeItem('token');
+      window.location = 'welcome.html';
+    };
+  </script>
+</body>
+</html> 

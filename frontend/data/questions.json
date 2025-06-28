@@ -1,0 +1,275 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "If 3 workers can complete a task in 8 days, how many days will it take 6 workers to complete the same task?",
+      "options": ["4 days", "6 days", "12 days", "16 days"],
+      "correct": 0,
+      "topic": "Ratios",
+      "explanation": "This is an inverse proportion problem. If 3 workers take 8 days, then 6 workers (double the workers) will take half the time: 8 ÷ 2 = 4 days."
+    },
+    {
+      "id": 2,
+      "question": "What is 25% of 80?",
+      "options": ["15", "20", "25", "30"],
+      "correct": 1,
+      "topic": "Percentages",
+      "explanation": "To find 25% of 80, multiply 80 by 0.25 (or divide by 4): 80 × 0.25 = 20."
+    },
+    {
+      "id": 3,
+      "question": "A car travels 120 km in 2 hours. What is its speed in km/h?",
+      "options": ["40 km/h", "60 km/h", "80 km/h", "120 km/h"],
+      "correct": 1,
+      "topic": "Time-Speed",
+      "explanation": "Speed = Distance ÷ Time. Speed = 120 km ÷ 2 hours = 60 km/h."
+    },
+    {
+      "id": 4,
+      "question": "If x + 5 = 12, what is the value of x?",
+      "options": ["5", "7", "12", "17"],
+      "correct": 1,
+      "topic": "Algebra",
+      "explanation": "Subtract 5 from both sides: x + 5 - 5 = 12 - 5, so x = 7."
+    },
+    {
+      "id": 5,
+      "question": "What is the area of a rectangle with length 8 cm and width 6 cm?",
+      "options": ["14 cm²", "28 cm²", "48 cm²", "56 cm²"],
+      "correct": 2,
+      "topic": "Geometry",
+      "explanation": "Area of rectangle = length × width = 8 cm × 6 cm = 48 cm²."
+    },
+    {
+      "id": 6,
+      "question": "The ratio of boys to girls in a class is 3:2. If there are 30 students, how many boys are there?",
+      "options": ["12", "15", "18", "20"],
+      "correct": 2,
+      "topic": "Ratios",
+      "explanation": "Total ratio parts = 3 + 2 = 5. Boys = (3/5) × 30 = 18."
+    },
+    {
+      "id": 7,
+      "question": "If a shirt costs $40 and is discounted by 20%, what is the final price?",
+      "options": ["$8", "$20", "$32", "$48"],
+      "correct": 2,
+      "topic": "Percentages",
+      "explanation": "Discount = 20% of $40 = $8. Final price = $40 - $8 = $32."
+    },
+    {
+      "id": 8,
+      "question": "A train travels 300 km in 4 hours. How long will it take to travel 450 km at the same speed?",
+      "options": ["5 hours", "6 hours", "7 hours", "8 hours"],
+      "correct": 1,
+      "topic": "Time-Speed",
+      "explanation": "Speed = 300 km ÷ 4 hours = 75 km/h. Time for 450 km = 450 ÷ 75 = 6 hours."
+    },
+    {
+      "id": 9,
+      "question": "If 2x - 3 = 7, what is the value of x?",
+      "options": ["2", "3", "5", "7"],
+      "correct": 2,
+      "topic": "Algebra",
+      "explanation": "Add 3 to both sides: 2x = 10. Divide by 2: x = 5."
+    },
+    {
+      "id": 10,
+      "question": "What is the perimeter of a square with side length 5 cm?",
+      "options": ["10 cm", "15 cm", "20 cm", "25 cm"],
+      "correct": 2,
+      "topic": "Geometry",
+      "explanation": "Perimeter of square = 4 × side length = 4 × 5 cm = 20 cm."
+    },
+    {
+      "id": 11,
+      "question": "If 4 books cost $60, how much do 6 books cost?",
+      "options": ["$75", "$80", "$90", "$100"],
+      "correct": 2,
+      "topic": "Ratios",
+      "explanation": "Cost per book = $60 ÷ 4 = $15. Cost for 6 books = $15 × 6 = $90."
+    },
+    {
+      "id": 12,
+      "question": "What is 15% of 200?",
+      "options": ["15", "25", "30", "35"],
+      "correct": 2,
+      "topic": "Percentages",
+      "explanation": "15% of 200 = 200 × 0.15 = 30."
+    },
+    {
+      "id": 13,
+      "question": "A cyclist covers 45 km in 3 hours. What is the average speed?",
+      "options": ["12 km/h", "15 km/h", "18 km/h", "20 km/h"],
+      "correct": 1,
+      "topic": "Time-Speed",
+      "explanation": "Average speed = Distance ÷ Time = 45 km ÷ 3 hours = 15 km/h."
+    },
+    {
+      "id": 14,
+      "question": "If 3x + 2 = 14, what is x?",
+      "options": ["3", "4", "5", "6"],
+      "correct": 1,
+      "topic": "Algebra",
+      "explanation": "Subtract 2: 3x = 12. Divide by 3: x = 4."
+    },
+    {
+      "id": 15,
+      "question": "What is the area of a circle with radius 7 cm? (Use π = 3.14)",
+      "options": ["43.96 cm²", "153.86 cm²", "307.72 cm²", "615.44 cm²"],
+      "correct": 1,
+      "topic": "Geometry",
+      "explanation": "Area = πr² = 3.14 × 7² = 3.14 × 49 = 153.86 cm²."
+    }
+  ],
+  "topics": {
+    "Ratios": {
+      "description": "Understanding proportional relationships and how quantities relate to each other.",
+      "key_concepts": [
+        "Direct proportion: when one quantity increases, the other increases proportionally",
+        "Inverse proportion: when one quantity increases, the other decreases proportionally",
+        "Ratio notation (a:b) and how to solve ratio problems",
+        "Cross-multiplication method for solving proportions"
+      ],
+      "practice_questions": [
+        {
+          "question": "If 5 workers can build a wall in 10 days, how many days will it take 10 workers?",
+          "options": ["2 days", "5 days", "10 days", "20 days"],
+          "correct": 1,
+          "explanation": "This is inverse proportion. More workers = less time. 5 workers take 10 days, so 10 workers (double) will take half the time: 10 ÷ 2 = 5 days."
+        },
+        {
+          "question": "The ratio of apples to oranges is 4:3. If there are 28 fruits total, how many apples are there?",
+          "options": ["12", "16", "20", "24"],
+          "correct": 1,
+          "explanation": "Total ratio parts = 4 + 3 = 7. Apples = (4/7) × 28 = 16."
+        },
+        {
+          "question": "If 3 pens cost $9, how much do 7 pens cost?",
+          "options": ["$18", "$21", "$24", "$27"],
+          "correct": 1,
+          "explanation": "Cost per pen = $9 ÷ 3 = $3. Cost for 7 pens = $3 × 7 = $21."
+        }
+      ]
+    },
+    "Percentages": {
+      "description": "Working with parts per hundred and understanding percentage calculations.",
+      "key_concepts": [
+        "Percentage as a fraction of 100",
+        "Converting between percentages, decimals, and fractions",
+        "Calculating percentage of a number",
+        "Percentage increase and decrease",
+        "Finding original value after percentage change"
+      ],
+      "practice_questions": [
+        {
+          "question": "What is 30% of 150?",
+          "options": ["30", "45", "50", "60"],
+          "correct": 1,
+          "explanation": "30% of 150 = 150 × 0.30 = 45."
+        },
+        {
+          "question": "If a $50 item is discounted by 15%, what is the final price?",
+          "options": ["$35", "$42.50", "$45", "$47.50"],
+          "correct": 1,
+          "explanation": "Discount = 15% of $50 = $7.50. Final price = $50 - $7.50 = $42.50."
+        },
+        {
+          "question": "A number increased by 20% becomes 120. What was the original number?",
+          "options": ["80", "90", "100", "110"],
+          "correct": 2,
+          "explanation": "If x is the original number, then x + 0.2x = 120. So 1.2x = 120, therefore x = 100."
+        }
+      ]
+    },
+    "Time-Speed": {
+      "description": "Understanding the relationship between time, speed, and distance in motion problems.",
+      "key_concepts": [
+        "Speed = Distance ÷ Time",
+        "Distance = Speed × Time",
+        "Time = Distance ÷ Speed",
+        "Average speed calculations",
+        "Relative speed problems"
+      ],
+      "practice_questions": [
+        {
+          "question": "A car travels 180 km in 3 hours. What is its speed?",
+          "options": ["45 km/h", "60 km/h", "90 km/h", "120 km/h"],
+          "correct": 1,
+          "explanation": "Speed = Distance ÷ Time = 180 km ÷ 3 hours = 60 km/h."
+        },
+        {
+          "question": "How long does it take to travel 240 km at 80 km/h?",
+          "options": ["2 hours", "3 hours", "4 hours", "5 hours"],
+          "correct": 1,
+          "explanation": "Time = Distance ÷ Speed = 240 km ÷ 80 km/h = 3 hours."
+        },
+        {
+          "question": "A train travels 400 km in 5 hours. What is the average speed?",
+          "options": ["60 km/h", "70 km/h", "80 km/h", "90 km/h"],
+          "correct": 2,
+          "explanation": "Average speed = Distance ÷ Time = 400 km ÷ 5 hours = 80 km/h."
+        }
+      ]
+    },
+    "Algebra": {
+      "description": "Solving equations and working with variables to find unknown values.",
+      "key_concepts": [
+        "Linear equations in one variable",
+        "Adding/subtracting the same value to both sides",
+        "Multiplying/dividing both sides by the same value",
+        "Combining like terms",
+        "Solving for a variable"
+      ],
+      "practice_questions": [
+        {
+          "question": "If x - 4 = 8, what is x?",
+          "options": ["4", "8", "12", "16"],
+          "correct": 2,
+          "explanation": "Add 4 to both sides: x - 4 + 4 = 8 + 4, so x = 12."
+        },
+        {
+          "question": "If 2x + 3 = 11, what is x?",
+          "options": ["3", "4", "5", "6"],
+          "correct": 1,
+          "explanation": "Subtract 3: 2x = 8. Divide by 2: x = 4."
+        },
+        {
+          "question": "If 5x - 2 = 18, what is x?",
+          "options": ["2", "3", "4", "5"],
+          "correct": 2,
+          "explanation": "Add 2: 5x = 20. Divide by 5: x = 4."
+        }
+      ]
+    },
+    "Geometry": {
+      "description": "Understanding shapes, areas, perimeters, and geometric properties.",
+      "key_concepts": [
+        "Area and perimeter of basic shapes",
+        "Rectangle: Area = length × width, Perimeter = 2(l + w)",
+        "Square: Area = side², Perimeter = 4 × side",
+        "Circle: Area = πr², Circumference = 2πr",
+        "Triangle: Area = ½ × base × height"
+      ],
+      "practice_questions": [
+        {
+          "question": "What is the area of a rectangle with length 10 cm and width 7 cm?",
+          "options": ["17 cm²", "34 cm²", "70 cm²", "140 cm²"],
+          "correct": 2,
+          "explanation": "Area = length × width = 10 cm × 7 cm = 70 cm²."
+        },
+        {
+          "question": "What is the perimeter of a square with side length 6 cm?",
+          "options": ["12 cm", "18 cm", "24 cm", "36 cm"],
+          "correct": 2,
+          "explanation": "Perimeter = 4 × side length = 4 × 6 cm = 24 cm."
+        },
+        {
+          "question": "What is the area of a circle with radius 5 cm? (Use π = 3.14)",
+          "options": ["15.7 cm²", "31.4 cm²", "78.5 cm²", "157 cm²"],
+          "correct": 2,
+          "explanation": "Area = πr² = 3.14 × 5² = 3.14 × 25 = 78.5 cm²."
+        }
+      ]
+    }
+  }
+} 

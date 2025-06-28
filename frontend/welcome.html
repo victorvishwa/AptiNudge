@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to AptiNudge</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    .welcome-hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      animation: fadeIn 1.2s cubic-bezier(.4,0,.2,1);
+    }
+    .welcome-title {
+      font-size: 3rem;
+      font-weight: 700;
+      color: white;
+      margin-bottom: 20px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      letter-spacing: 1px;
+      animation: slideUp 1s cubic-bezier(.4,0,.2,1);
+    }
+    .welcome-subtitle {
+      font-size: 1.3rem;
+      color: rgba(255,255,255,0.92);
+      margin-bottom: 40px;
+      font-weight: 400;
+      animation: slideUp 1.2s cubic-bezier(.4,0,.2,1);
+    }
+    .welcome-btn {
+      font-size: 1.1rem;
+      padding: 15px 40px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      font-weight: 600;
+      border: none;
+      box-shadow: 0 8px 25px rgba(102,126,234,0.3);
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: fadeIn 1.5s cubic-bezier(.4,0,.2,1);
+      margin: 10px;
+    }
+    .welcome-btn:hover {
+      transform: translateY(-3px) scale(1.04);
+      box-shadow: 0 12px 35px rgba(102,126,234,0.5);
+    }
+    .welcome-btn.secondary {
+      background: rgba(255, 255, 255, 0.9);
+      color: #667eea;
+      border: 2px solid #667eea;
+    }
+    .welcome-btn.secondary:hover {
+      background: #667eea;
+      color: white;
+    }
+    .welcome-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+    .user-info {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      backdrop-filter: blur(10px);
+    }
+    .user-info h3 {
+      color: white;
+      margin-bottom: 10px;
+    }
+    .auth-modal {
+      background: rgba(255,255,255,0.98);
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      padding: 32px 28px 24px 28px;
+      max-width: 350px;
+      width: 100%;
+      margin: 20px auto 0 auto;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      animation: fadeIn 0.7s cubic-bezier(.4,0,.2,1);
+    }
+    .auth-modal.active {
+      display: flex;
+    }
+    .auth-modal h3 {
+      margin-bottom: 18px;
+      color: #333;
+    }
+    .auth-form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+    }
+    .auth-form input {
+      padding: 12px 16px;
+      border: 2px solid #e1e5e9;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+    .auth-form button {
+      padding: 12px 0;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .auth-msg {
+      margin-top: 10px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      width: 100%;
+      text-align: center;
+    }
+    .auth-msg.success {
+      background: #d4edda;
+      color: #155724;
+    }
+    .auth-msg.error {
+      background: #f8d7da;
+      color: #721c24;
+    }
+    .auth-toggle {
+      margin-top: 10px;
+      color: #667eea;
+      cursor: pointer;
+      font-size: 0.98rem;
+      text-decoration: underline;
+      background: none;
+      border: none;
+      padding: 0;
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @media (max-width: 600px) {
+      .welcome-hero {
+        padding: 10px;
+      }
+      .welcome-title {
+        font-size: 2rem;
+        margin-bottom: 10px;
+      }
+      .welcome-subtitle {
+        font-size: 1rem;
+        margin-bottom: 20px;
+      }
+      .welcome-btn, .welcome-btn.secondary {
+        font-size: 1rem;
+        padding: 12px 10px;
+        width: 100%;
+        min-width: 0;
+        margin: 6px 0;
+      }
+      .welcome-buttons {
+        gap: 8px;
+        width: 100%;
+      }
+      .auth-modal {
+        max-width: 98vw;
+        padding: 18px 6px 12px 6px;
+        min-width: 0;
+      }
+      .auth-form input, .auth-form button {
+        font-size: 1rem;
+        padding: 10px 8px;
+      }
+      .user-info {
+        padding: 10px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header style="width:100%;padding:20px 0;text-align:center;background:rgba(255,255,255,0.05);">
+    <span style="font-size:2rem;font-weight:700;color:white;letter-spacing:1px;">🧠 AptiNudge</span>
+  </header>
+  <main class="welcome-hero">
+    <div class="welcome-title" id="welcomeTitle">Welcome to AptiNudge</div>
+    <div class="welcome-subtitle" id="welcomeSubtitle">An AI-Powered Personalized Aptitude Learning Platform</div>
+    <div class="user-info" id="userInfo" style="display: none;">
+      <h3 id="userGreeting">Welcome back!</h3>
+    </div>
+    <div class="welcome-buttons" id="welcomeButtons">
+      <button class="welcome-btn" id="startQuizBtn" style="display:none;">🚀 Start Aptitude Test</button>
+      <button class="welcome-btn" id="showLoginBtn">Login</button>
+      <button class="welcome-btn secondary" id="showRegisterBtn">Register</button>
+      <button class="welcome-btn secondary" id="logoutBtn" style="display:none;">Logout</button>
+    </div>
+    <!-- Login Modal -->
+    <div class="auth-modal" id="loginModal">
+      <h3>Login to AptiNudge</h3>
+      <form id="loginForm" class="auth-form">
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="password" type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <div id="loginMsg" class="auth-msg"></div>
+      <button class="auth-toggle" id="toRegister">Don't have an account? Register</button>
+    </div>
+    <!-- Register Modal -->
+    <div class="auth-modal" id="registerModal">
+      <h3>Register for AptiNudge</h3>
+      <form id="registerForm" class="auth-form">
+        <input name="username" placeholder="Username" required>
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="password" type="password" placeholder="Password" required>
+        <button type="submit">Register</button>
+      </form>
+      <div id="registerMsg" class="auth-msg"></div>
+      <button class="auth-toggle" id="toLogin">Already have an account? Login</button>
+    </div>
+  </main>
+  <footer style="width:100%;padding:18px 0;text-align:center;color:rgba(255,255,255,0.7);background:rgba(0,0,0,0.08);font-size:1rem;">
+    &copy; 2024 AptiNudge. All rights reserved.
+  </footer>
+  <script>
+    // UI Elements
+    const loginModal = document.getElementById('loginModal');
+    const registerModal = document.getElementById('registerModal');
+    const showLoginBtn = document.getElementById('showLoginBtn');
+    const showRegisterBtn = document.getElementById('showRegisterBtn');
+    const toRegister = document.getElementById('toRegister');
+    const toLogin = document.getElementById('toLogin');
+    const startQuizBtn = document.getElementById('startQuizBtn');
+    const logoutBtn = document.getElementById('logoutBtn');
+    const userInfo = document.getElementById('userInfo');
+    const userGreeting = document.getElementById('userGreeting');
+    const welcomeTitle = document.getElementById('welcomeTitle');
+    const welcomeSubtitle = document.getElementById('welcomeSubtitle');
+
+    // Show/hide modals
+    function showLogin() {
+      loginModal.classList.add('active');
+      registerModal.classList.remove('active');
+    }
+    function showRegister() {
+      registerModal.classList.add('active');
+      loginModal.classList.remove('active');
+    }
+    function hideModals() {
+      loginModal.classList.remove('active');
+      registerModal.classList.remove('active');
+    }
+    showLoginBtn.onclick = showLogin;
+    showRegisterBtn.onclick = showRegister;
+    toRegister.onclick = showRegister;
+    toLogin.onclick = showLogin;
+    // Hide modals when clicking outside
+    window.onclick = function(e) {
+      if (e.target === loginModal) loginModal.classList.remove('active');
+      if (e.target === registerModal) registerModal.classList.remove('active');
+    };
+
+    // Auth logic
+    function checkAuthStatus() {
+      const token = localStorage.getItem('token');
+      if (token) {
+        try {
+          const payload = JSON.parse(atob(token.split('.')[1]));
+          const username = payload.username;
+          welcomeTitle.textContent = `Welcome back, ${username}!`;
+          welcomeSubtitle.textContent = 'Ready to continue your learning journey?';
+          userInfo.style.display = 'block';
+          userGreeting.textContent = `Hello, ${username}! You're all set to start learning.`;
+          startQuizBtn.style.display = 'inline-block';
+          logoutBtn.style.display = 'inline-block';
+          showLoginBtn.style.display = 'none';
+          showRegisterBtn.style.display = 'none';
+        } catch (e) {
+          localStorage.removeItem('token');
+          showLoggedOut();
+        }
+      } else {
+        showLoggedOut();
+      }
+    }
+    function showLoggedOut() {
+      welcomeTitle.textContent = 'Welcome to AptiNudge';
+      welcomeSubtitle.textContent = 'An AI-Powered Personalized Aptitude Learning Platform';
+      userInfo.style.display = 'none';
+      startQuizBtn.style.display = 'none';
+      logoutBtn.style.display = 'none';
+      showLoginBtn.style.display = 'inline-block';
+      showRegisterBtn.style.display = 'inline-block';
+    }
+    logoutBtn.onclick = function() {
+      localStorage.removeItem('token');
+      checkAuthStatus();
+    };
+    startQuizBtn.onclick = function() {
+      window.location = 'index.html';
+    };
+
+    // Login form submit
+    document.getElementById('loginForm').onsubmit = async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const msgDiv = document.getElementById('loginMsg');
+      msgDiv.textContent = '';
+      try {
+        const res = await fetch('http://localhost:5000/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            email: form.email.value,
+            password: form.password.value
+          })
+        });
+        const data = await res.json();
+        if (res.ok) {
+          localStorage.setItem('token', data.token);
+          msgDiv.textContent = 'Login successful!';
+          msgDiv.className = 'auth-msg success';
+          setTimeout(() => {
+            hideModals();
+            checkAuthStatus();
+          }, 1000);
+        } else {
+          msgDiv.textContent = data.message || 'Login failed. Please try again.';
+          msgDiv.className = 'auth-msg error';
+        }
+      } catch (error) {
+        msgDiv.textContent = 'Network error. Please check your connection.';
+        msgDiv.className = 'auth-msg error';
+      }
+    };
+    // Register form submit
+    document.getElementById('registerForm').onsubmit = async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const msgDiv = document.getElementById('registerMsg');
+      msgDiv.textContent = '';
+      try {
+        const res = await fetch('http://localhost:5000/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            username: form.username.value,
+            email: form.email.value,
+            password: form.password.value
+          })
+        });
+        const data = await res.json();
+        if (res.ok) {
+          localStorage.setItem('token', data.token);
+          msgDiv.textContent = 'Registration successful!';
+          msgDiv.className = 'auth-msg success';
+          setTimeout(() => {
+            hideModals();
+            checkAuthStatus();
+          }, 1000);
+        } else {
+          msgDiv.textContent = data.message || 'Registration failed. Please try again.';
+          msgDiv.className = 'auth-msg error';
+        }
+      } catch (error) {
+        msgDiv.textContent = 'Network error. Please check your connection.';
+        msgDiv.className = 'auth-msg error';
+      }
+    };
+    // On load
+    window.onload = checkAuthStatus;
+  </script>
+</body>
+</html> 

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | AptiNudge</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Fallback styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    
+    h2 {
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+    
+    #userWelcome {
+      color: white;
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+    
+    button {
+      padding: 15px 30px;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      margin: 10px;
+    }
+    
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 10px 2px;
+      }
+      h2 {
+        font-size: 1.3rem;
+        margin-bottom: 18px;
+      }
+      #userWelcome {
+        font-size: 1rem;
+        margin-bottom: 18px;
+      }
+      button {
+        font-size: 1rem;
+        padding: 12px 8px;
+        width: 100%;
+        min-width: 0;
+        margin: 6px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>🧠 Welcome to your Dashboard!</h2>
+    <div id="userWelcome"></div>
+    <button onclick="logout()">Logout</button>
+    <button onclick="window.location='index.html'">Go to Main App</button>
+  </div>
+  <script>
+  // Redirect to welcome if not authenticated
+  const token = localStorage.getItem('token');
+  if (!token) {
+    window.location = 'welcome.html';
+  } else {
+    // Optionally decode JWT for username (not secure, just for demo)
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      document.getElementById('userWelcome').textContent = `Hello, ${payload.username}!`;
+    } catch (e) {
+      document.getElementById('userWelcome').textContent = 'Hello, user!';
+    }
+  }
+  function logout() {
+    localStorage.removeItem('token');
+    window.location = 'welcome.html';
+  }
+  </script>
+</body>
+</html> 
