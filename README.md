@@ -1,5 +1,10 @@
 
-# AptiNudge
+# AptiNudge 
+
+<a href="https://aptinudge-front.onrender.com" target="_blank">
+  <img src="https://img.shields.io/badge/Visit-AptiNudge-1abc9c?style=for-the-badge&logo=rocket" alt="Visit AptiNudge">
+</a>
+
 
 # 🧠 AptiNudge – AI-Powered Personalized Aptitude Trainer
 
