@@ -1,6 +1,6 @@
 // Groq API Configuration
 // Replace 'your-groq-api-key-here' with your actual Groq API key
-const GROQ_API_KEY = 'your-groq-api-key-here';
+const GROQ_API_KEY = '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';
 
 // Export the API key for use in other modules
 if (typeof module !== 'undefined' && module.exports) {
