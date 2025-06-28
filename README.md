@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 # AptiNudge
-=======
+
 # 🧠 AptiNudge – AI-Powered Personalized Aptitude Trainer
 
 A comprehensive web application that combines aptitude testing, AI-powered coaching, and mood-aware learning to provide personalized educational experiences.
@@ -254,5 +254,4 @@ For questions or support:
 
 **Built with ❤️ for personalized education**
 
-*AptiNudge - Making learning adaptive, intelligent, and emotionally aware* 
->>>>>>> d1dbdf7 (Initial project push)
+
